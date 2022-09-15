@@ -28,21 +28,25 @@ function App() {
     getMovieRequest(searchValue);
   }, [searchValue]);
 
-  useEffect(() => {
-    const movieFavourite = JSON.parse(
-      localStorage.getItem("react-movie-app-favourites")
-    );
-    setFavourites(movieFavourite);
-  }, []);
+  // const saveToLocalStorage = (items) => {
+  //   localStorage.setItem("react-movie-app-favourites", JSON.stringify(items));
+  // };
 
-  const saveToLocalStorage = (items) => {
-    localStorage.setItem("react-movie-app-favourites", JSON.stringify(items));
-  };
+  // useEffect(() => {
+  //   const movieFavourite = JSON.parse(
+  //     localStorage.getItem("react-movie-app-favourites")
+  //   );
+  //   setFavourites(movieFavourite);
+  // }, []);
 
   const addFavouriteMovie = (movie) => {
-    const newFavouriteList = [...favourites, movie];
-    setFavourites(newFavouriteList);
-    saveToLocalStorage(newFavouriteList);
+    try {
+      const newFavouriteList = [...favourites, movie];
+      setFavourites(newFavouriteList);
+      // saveToLocalStorage(newFavouriteList);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const removeFavouriteMovie = (movie) => {
