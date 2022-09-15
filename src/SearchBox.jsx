@@ -1,16 +1,14 @@
 import React from "react";
 
-function SearchBox(props) {
+function SearchBox({ searchValue, setSearchValue }) {
   return (
-    <div>
-      <form>
-        <input
-          value={props.searchValue}
-          onChange={(event) => props.setSearchValue(event.target.value)}
-          placeholder="Type to search.."
-        />
-      </form>
-    </div>
+    <form>
+      <input
+        value={searchValue}
+        onChange={(event) => setSearchValue(event.target.value)}
+        placeholder="Type to search.."
+      />
+    </form>
   );
 }
 
