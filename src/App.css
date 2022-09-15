@@ -87,3 +87,26 @@ body {
   justify-content: center;
   text-align: center;
 }
+
+@media screen and (max-width: 1024px) {
+  .overlay {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .head-row {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .head-row form {
+    width: 70%;
+  }
+
+  .head-row input {
+    width: 100%;
+    margin: auto;
+  }
+}

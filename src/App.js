@@ -63,11 +63,15 @@ function App() {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
       </div>
       <div className="movie-row">
-        <MovieList
-          movies={movies}
-          handleFavouritesClick={addFavouriteMovie}
-          favouriteComponent={AddFavourites}
-        />
+        {!movies === [] ? (
+          "Search to get any Movies"
+        ) : (
+          <MovieList
+            movies={movies}
+            handleFavouritesClick={addFavouriteMovie}
+            favouriteComponent={AddFavourites}
+          />
+        )}
       </div>
       <div className="head-row">
         <MovieListhead heading="Favourites" />
